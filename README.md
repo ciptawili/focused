@@ -1,4 +1,4 @@
-# API testing examples with Cypress
+# Testing with Cypress
 
 ## Summary
 
