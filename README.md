@@ -1,11 +1,5 @@
 # Testing with Cypress
 
-## Summary
-
-This is a simple API test automation project using one of the most popular browser testing frameworks to date - [Cypress.io](https://github.com/cypress-io/cypress).
-
-The test API endpoints used for the purpose of this project are provided for free usage by [Ben Howdle](https://benhowdle.im/) via the website [regres.in](https://reqres.in/).
-
 ## Setup
 
 In order to run this project follow this simple steps:
