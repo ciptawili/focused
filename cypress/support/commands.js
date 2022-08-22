@@ -23,3 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('switchToIframe', (iframeSelector, ...elSelector) => {
+    return cy
+    .get(`${iframeSelector || ''} > iframe`, {timeout : 10000})
+    .should($iframe => {
+        for(let i = 0; i < elSelector.length; i++){
+            expect($iframe.contents().find(elSelector[i] || 'body')).to.exist;
+        }
+    })
+    .then($iframe => {
+        return cy.wrap($iframe.contents().find('body'))
+    })
+})

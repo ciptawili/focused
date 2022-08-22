@@ -9,7 +9,7 @@ const getIframe = () => {
 
 const getIframeIssuing = () => {
     return cy
-    .get('iframe[class="iframe-3ds"]')
+    .get('[class=iframe-3ds]')
     .its('0.contentDocument.body').should('not.be.empty')
     .then(cy.wrap)
 }
@@ -62,12 +62,9 @@ describe('Checkout Test', () => {
         });
 
         it('should be input password issuing', () => {
-            cy.get('iframe').switchToIframe(() => {
-                cy.get(selector.inputPasswordIssuing).type('112233')
-            })
-            getIframe().getIframeIssuing().find(selector.inputPasswordIssuing).type('112233')
-            getIframe().find(selector.inputPasswordIssuing).type('112233')
-            getIframe().find(selector.buttonOk).click()
+            getIframeIssuing().find(selector.inputPasswordIssuing).type('112233')
+            getIframeIssuing().find(selector.inputPasswordIssuing).type('112233')
+            getIframeIssuing().find(selector.buttonOk).click()
         });
     })
     
